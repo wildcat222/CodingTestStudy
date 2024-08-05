@@ -1,18 +1,24 @@
 package baekjoon.silver5;
 
+import java.util.Scanner;
+
 public class 막대기 {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+
         int stick = 64;
         int stick_cnt = 1;
-        int total_cm = 0;
 
-        while (total_cm != x) {
+
+        while (stick != x) {
             if (stick > x) {
-                total_cm = stick / 2;
-                stick_cnt++;
-                if (total_cm >= x) {
-                    stick_cnt--;
-                    stick /= 2;
+                stick /= 2;
+                if (stick >= x) {
+                    continue;
+                } else {
+                    stick_cnt++;
+                    x -= stick;
                 }
             }
         }
