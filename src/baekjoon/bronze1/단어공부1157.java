@@ -1,5 +1,6 @@
 package baekjoon.bronze1;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class 단어공부1157 {
@@ -30,6 +31,26 @@ public class 단어공부1157 {
                 max_i = i;
             }
         }
-        System.out.println((char) (max_i + 'A'));
+
+//        Arrays.sort(cnt);
+//        for (int i = 0; i < cnt.length - 1; i++) {
+//            if (cnt[i] == max && cnt[i] == cnt[i + 1]) {
+//                System.out.println('?');
+//                return;
+//            }
+//        }
+//        System.out.println((char) (max_i + 'A'));
+
+        Arrays.sort(cnt);
+        if (cnt[cnt.length - 1] == cnt[cnt.length - 2]) {
+            System.out.println('?');
+        } else {
+            System.out.println((char) (max_i + 'A'));
+        }
+
+
+
     }
 }
+
+
