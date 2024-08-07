@@ -27,8 +27,7 @@ public class 단어공부1157 {
         for (int i = 0;  i < cnt.length; i++) {
             if (max < cnt[i]) {
                 max = cnt[i];
-            } else if (max == cnt[i]) {
-                System.out.println('?');
+                최빈값 인덱스 저장
             }
         }
 
