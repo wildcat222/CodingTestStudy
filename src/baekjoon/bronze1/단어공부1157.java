@@ -1,6 +1,5 @@
 package baekjoon.bronze1;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class 단어공부1157 {
@@ -15,6 +14,7 @@ public class 단어공부1157 {
         char[] ch = str.toCharArray();
         int[] cnt = new int[27];
         int max = Integer.MIN_VALUE;
+        int max_i = 0;
 
         for (int i = 0; i < ch.length; i++) {
             if (ch[i] >= 'A' && ch[i] <= 'Z') {
@@ -27,10 +27,9 @@ public class 단어공부1157 {
         for (int i = 0;  i < cnt.length; i++) {
             if (max < cnt[i]) {
                 max = cnt[i];
-                최빈값 인덱스 저장
+                max_i = i;
             }
         }
-
-
+        System.out.println((char) (max_i + 'A'));
     }
 }
