@@ -77,7 +77,5 @@ public class 상금헌터15953 {
             System.out.println(prize);
         }
 
-
-
     }
 }
