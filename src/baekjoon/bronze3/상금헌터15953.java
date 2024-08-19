@@ -3,9 +3,10 @@ package baekjoon.bronze3;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class 상금헌터15953 {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         // 1회 상금 (본선 진출자 100명)
         // 1등 500만원 1명
         // 2등 300만원 2명
@@ -31,51 +32,132 @@ public class 상금헌터15953 {
         // 각 가정이 성립할 때 제이지가 받을 상금을 원 단위의 정수로 한 줄에 하나씩 출력한다.
         // 입력이 들어오는 순서대로 출력해야 한다.
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-        int T = Integer.parseInt(br.readLine());
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        int[] firstPrize = {500, 300, 200, 50, 30, 10};
+        int[] secondPrize = {512, 256, 128, 64, 32};
 
         for (int i = 0; i < T; i++) {
-            String str = br.readLine();
-            int a = Integer.parseInt(str.split(" ")[0]);
-            int b = Integer.parseInt(str.split(" ")[1]);
-            int prize = 0;
+            int totalPrize = 0;
+            int a = sc.nextInt();
+            int b = sc.nextInt();
 
-            if (a == 0) {
-                prize += 0;
+            if (a == 1) {
+                totalPrize += firstPrize[0];
+            } else if (a > 1 && a <= 3) {
+                totalPrize += firstPrize[1];
+            } else if (a > 3 && a <= 6) {
+                totalPrize += firstPrize[2];
+            } else if (a > 6 && a <= 10) {
+                totalPrize += firstPrize[3];
+            } else if (a > 10 && a <= 15) {
+                totalPrize += firstPrize[4];
+            } else if (a > 15 && a <= 21) {
+                totalPrize += firstPrize[5];
             } else {
-                if (a == 1) {
-                    prize += 5000000;
-                } else if (a > 1 && a <= 3) {
-                    prize += 3000000;
-                } else if (a > 3 && a <= 6) {
-                    prize += 2000000;
-                } else if (a > 6 && a <= 10) {
-                    prize += 500000;
-                } else if (a > 10 && a <= 15) {
-                    prize += 300000;
-                } else if (a > 15 && a <= 21) {
-                    prize += 500000;
-                }
+                totalPrize = 0;
             }
 
-            if (b == 0) {
-                prize += 0;
-            } else {
-                if (b == 1) {
-                    prize += 5120000;
-                } else if (b > 1 && b <= 3) {
-                    prize += 2560000;
-                } else if (b > 3 && b <= 7) {
-                    prize += 1280000;
-                } else if (b > 7 && b <= 15) {
-                    prize += 640000;
-                } else if (b > 15 && b <= 31) {
-                    prize += 320000;
-                }
+            if (b == 1) {
+                totalPrize += secondPrize[0];
+            } else if (b > 1 && b <= 3) {
+                totalPrize += secondPrize[1];
+            } else if (b > 3 && b <= 7) {
+                totalPrize += secondPrize[2];
+            } else if (b > 7 && b <= 15) {
+                totalPrize += secondPrize[3];
+            } else if (b > 15 && b <= 31) {
+                totalPrize += secondPrize[4];
             }
-            System.out.println(prize);
+            System.out.println(totalPrize * 10000);
         }
+        sc.close();
+
+
+
+
+
+//        for (int i = 0; i < T; i++) {
+//            sc.nextLine();
+//            int a = sc.nextInt();
+//            int b = sc.nextInt();
+//            int prize = 0;
+//
+//            if (a == 1) {
+//                prize += 5000000;
+//            } else if (a > 1 && a <= 3) {
+//                prize += 3000000;
+//            } else if (a > 3 && a <= 6) {
+//                prize += 2000000;
+//            } else if (a > 6 && a <= 10) {
+//                prize += 500000;
+//            } else if (a > 10 && a <= 15) {
+//                prize += 300000;
+//            } else if (a > 15 && a <= 21) {
+//                prize += 500000;
+//            } else {
+//                prize += 0;
+//            }
+//
+//            if (b == 1) {
+//                prize += 5120000;
+//            } else if (b > 1 && b <= 3) {
+//                prize += 2560000;
+//            } else if (b > 3 && b <= 7) {
+//                prize += 1280000;
+//            } else if (b > 7 && b <= 15) {
+//                prize += 640000;
+//            } else if (b > 15 && b <= 31) {
+//                prize += 320000;
+//            } else {
+//                prize += 0;
+//            }
+//            System.out.println(prize);
+//        }
+
+
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//
+//        int T = Integer.parseInt(br.readLine());
+//
+//        for (int i = 0; i < T; i++) {
+//            String str = br.readLine();
+//            int a = Integer.parseInt(str.split(" ")[0]);
+//            int b = Integer.parseInt(str.split(" ")[1]);
+//            int prize = 0;
+//
+//            if (a == 1) {
+//                prize += 5000000;
+//            } else if (a > 1 && a <= 3) {
+//                prize += 3000000;
+//            } else if (a > 3 && a <= 6) {
+//                prize += 2000000;
+//            } else if (a > 6 && a <= 10) {
+//                prize += 500000;
+//            } else if (a > 10 && a <= 15) {
+//                prize += 300000;
+//            } else if (a > 15 && a <= 21) {
+//                prize += 500000;
+//            } else {
+//                prize += 0;
+//            }
+//
+//            if (b == 1) {
+//                prize += 5120000;
+//            } else if (b > 1 && b <= 3) {
+//                prize += 2560000;
+//            } else if (b > 3 && b <= 7) {
+//                prize += 1280000;
+//            } else if (b > 7 && b <= 15) {
+//                prize += 640000;
+//            } else if (b > 15 && b <= 31) {
+//                prize += 320000;
+//            } else {
+//                prize += 0;
+//            }
+//
+//            System.out.println(prize);
+//        }
 
     }
 }
