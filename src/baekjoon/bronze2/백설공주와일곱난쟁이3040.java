@@ -12,7 +12,7 @@ public class 백설공주와일곱난쟁이3040 {
         int sum = 0; // 전체 난쟁이의 모자 숫자의 합
         for(int i = 0; i < mans.length; i++) { // 난쟁이 인원수만큼 모자 숫자 입력받아서 배열에 넣는 과정
             mans[i] = Integer.parseInt(br.readLine());
-            sum += mans[i];
+            sum += mans[i]; // 난쟁이 9명의 수를 모두 더해준다.
         }
 
         // 전체 난쟁이의 숫자 합에서 가짜 난쟁이 두명의 숫자를 뺐을 때 100이면 진짜 난쟁이 7명이 나온다.
