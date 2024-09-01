@@ -21,6 +21,5 @@ public class 뒤집기1439 {
         }
 
         System.out.println(Math.min(zero, one));
-        System.out.println(Math);
     }
 }
