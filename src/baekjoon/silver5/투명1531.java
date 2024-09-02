@@ -11,7 +11,7 @@ public class 투명1531 {
         String str = br.readLine();
         int[][] picture = new int[101][101];    // 그림 크기 100x100 -> 인덱스를 1부터 사용하기 위해 101x101크기로 설정
         int N = Integer.parseInt(str.split(" ")[0]);    // 불투명한 종이 갯수
-        int M = Integer.parseInt(str.split(" ")[1]);
+        int M = Integer.parseInt(str.split(" ")[1]);    // M개 이하의 종이로 가려져야 안보인다.
 
         for(int i = 0; i < N; i++) {
             String test = br.readLine();
