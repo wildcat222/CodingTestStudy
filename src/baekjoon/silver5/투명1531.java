@@ -9,8 +9,8 @@ public class 투명1531 {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String str = br.readLine();
-        int[][] picture = new int[101][101];
-        int N = Integer.parseInt(str.split(" ")[0]);
+        int[][] picture = new int[101][101];    // 그림 크기 100x100 -> 인덱스를 1부터 사용하기 위해 101x101크기로 설정
+        int N = Integer.parseInt(str.split(" ")[0]);    // 불투명한 종이 갯수
         int M = Integer.parseInt(str.split(" ")[1]);
 
         for(int i = 0; i < N; i++) {
